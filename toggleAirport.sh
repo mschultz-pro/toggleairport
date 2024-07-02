@@ -58,7 +58,7 @@ fi
 
 # Check actual current ethernet status
 for eth_name in ${eth_names}; do
-    if ([ "$eth_name" != "" ] && [ "`ifconfig $eth_name | grep "status: active"`" != "" ]); then
+    if ([ "$eth_name" != "" ] && [ "`ifconfig $eth_name 2>/dev/null | grep "status: active"`" != "" ]); then
         eth_status="On"
     fi
 done
